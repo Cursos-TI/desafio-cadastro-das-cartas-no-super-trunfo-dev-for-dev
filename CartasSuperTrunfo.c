@@ -79,7 +79,7 @@ int main() {
     // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
     // Exiba os valores inseridos para cada atributo da cidade, um por linha.
     printf("\nCarta 1:\n");
-    printf("Estado: %s \nCodigo: %s \nCidade: %s \n",estado,nome_cidade,codigo_da_carta);
+    printf("Estado: %s \nCodigo: %s \nCidade: %s \n",estado,codigo_da_carta,nome_cidade);
     printf("Populacao: %d habitantes\nPontos turisticos: %d \n",populacao,pontos_turisticos);
     printf("Area: %.0f km2\nPIB: %.0f bilhoes de reais\n", area, pib);
     printf("Densidade Populacional: %.2lf hab/km2 \n", densidade_populacional);
@@ -87,13 +87,13 @@ int main() {
 
 
     printf("\nCarta 2:\n");
-    printf("Estado: %s \nCodigo: %s \nCidade: %s \n",estado2,nome_cidade2,codigo_da_carta2);
+    printf("Estado: %s \nCodigo: %s \nCidade: %s \n",estado2,codigo_da_carta2,nome_cidade2);
     printf("Populacao: %d habitantes\nPontos turisticos: %d \n",populacao2,pontos_turisticos2);
     printf("Area: %.0f km2\nPIB: %.0f bilhoes de reais\n", area2, pib2);
     printf("Densidade Populacional: %.2lf hab/km2 \n", densidade_populacional2);
     printf("PIB Per Capita: R$ %.2lf reais\n", pib_per_capita2);
 
-    printf("\nComparacao de Cartas:\n");
+    printf("\nComparacao de Cartas:\n\nVenceu = (1)\nPerdeu = (0)\n\n");
 
     printf("Populacao: Carta 1 (%d)\n", populacao > populacao2);
     printf("Area: Carta 1 (%d)\n", area > area2);
