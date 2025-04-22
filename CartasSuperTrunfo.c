@@ -48,7 +48,7 @@ int main() {
     scanf("%f", &area);
     printf("O PIB: ");
     scanf("%f", &pib);
-// Calculo da densidade populacional, pib per capita e super poder da carta 1
+    // Calculo da densidade populacional, pib per capita e super poder da carta 1
     densidade_populacional = populacao / area;
     pib_per_capita = pib / populacao;
     super_poder1 = (float) populacao + area + pib + pontos_turisticos + pib_per_capita + (1.0 / densidade_populacional);
@@ -97,7 +97,7 @@ int main() {
     printf("PIB Per Capita: R$ %.2lf reais\n", pib_per_capita2);
     // As variaveis escolha1 e escolha2 servem para que o menu dinamico funcione
     int escolha1 = 0, escolha2 = 0;
-// Aqui é pedido o primeiro atributo a ser comparado
+    // Aqui é pedido o primeiro atributo a ser comparado
     printf("\nEscolha o primeiro atributo para comparar:\n");
     printf("1 - Populacao\n");
     printf("2 - Area\n");
@@ -108,7 +108,7 @@ int main() {
     printf("7 - Super Poder\n");
     printf("\nDigite o numero correspondente ao atributo: ");
     scanf("%d", &escolha1);
-// Nessa parte vem a escolha do segundo atributo realizando uma verificacao para não aparecer o atributo escolhido anteriormente
+    // Nessa parte vem a escolha do segundo atributo realizando uma verificacao para não aparecer o atributo escolhido anteriormente
     printf("\nEscolha o segundo atributo para comparar:\n");
     if (escolha1 != 1) printf("1 - Populacao\n");
     if (escolha1 != 2) printf("2 - Area\n");
@@ -119,7 +119,7 @@ int main() {
     if (escolha1 != 7) printf("7 - Super Poder\n");
     printf("\nDigite o numero correspondente ao atributo: ");
     scanf("%d", &escolha2);
-//A variavel densidade_verificacao serve para caso seja escolhido densidade a verificacao ocorra validando que o menor atributo ganhe
+    //A variavel densidade_verificacao serve para caso seja escolhido densidade a verificacao ocorra validando que o menor atributo ganhe
     int densidade_verificacao = 0;
     printf("\n==================\nComparando as cartas\n==================\n");
     //As variaveis resultado1 e resultado2 servem para somar os dois atributos escolhidos para verificação
