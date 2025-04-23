@@ -1,83 +1,102 @@
-# ⚠️ Importante!!!
-Criamos um novo link para o primeiro desafio porque o link original apresentou problemas. Quem já completou o desafio pode continuar usando o link original para enviar seu repositório. Se você ainda não começou o desafio, utilize o novo link.
+# 🃏 Super Trunfo Paises
 
-# Desafio Super Trunfo - Países - Cadastro das Cartas
+Este projeto em C simula um jogo de cartas no estilo *Super Trunfo*, utilizando paises como tema. Cada carta representa uma cidade com atributos como população, área, PIB, pontos turísticos, e mais. O jogador compara atributos entre cartas para determinar o vencedor.
 
-Bem-vindo ao desafio "Super Trunfo - Países"! No jogo Super Trunfo, os jogadores comparam as propriedades das cartas para determinar a mais forte. O tema deste Super Trunfo é "Países," onde você comparará as propriedades das cidades.
+## 📌 Funcionalidades
 
-A empresa MateCheck contratou você para desenvolver a parte inicial do jogo, que consiste no cadastro das cartas.
+- Cadastro manual de duas cartas representando cidades.
+- Cálculo automático de:
+  - Densidade populacional
+  - PIB per capita
+  - Super Poder (soma de todos os atributos + inverso da densidade)
+- Comparação entre atributos escolhidos pelos jogadores.
+- Validação especial: para densidade populacional, a **menor** vence.
 
-O desafio está dividido em três níveis: Novato, Aventureiro e Mestre, com cada nível adicionando mais complexidade ao anterior. Você deve escolher qual desafio quer realizar.
+## 📋 Atributos das Cartas
 
-### 🚨 Atenção: 
-O nível Novato do desafio é focado apenas no cadastro das cartas, utilizando as funções scanf para ler os dados e printf para exibi-los.
+Cada carta possui os seguintes atributos:
 
-## 🎮 Nível Novato
+- Código da carta
+- Nome do país
+- Estado
+- Nome da cidade
+- População
+- Área (km²)
+- PIB (em bilhões de reais)
+- Número de pontos turísticos
+- Densidade populacional (calculado)
+- PIB per capita (calculado)
+- Super Poder (calculado)
 
-No nível Novato, você iniciará criando o sistema básico do jogo Super Trunfo com o tema "Países". As cartas serão divididas por estados, cada um com quatro cidades. 
+## 🧮 Como funciona
 
-Cada país será dividido em oito estados, identificados pelas letras de A a H. Cada estado terá quatro cidades, numeradas de 1 a 4. A combinação da letra do estado e o número da cidade define o código da carta (por exemplo, A01, A02, B01, B02).
+O programa executa as seguintes etapas:
 
-### 🚩 Objetivo:
-- Criar cartas representando cidades, contendo as seguintes propriedades:
-  - **População**
-  - **Área**
-  - **PIB**
-  - **Número de pontos turísticos**
-  
-### ⚙️ Funcionalidades do Sistema:
-- O sistema permitirá ao usuário cadastrar cartas de cidades, inserindo manualmente os dados via terminal de comando.
-- Após o cadastro, o sistema exibirá os dados de cada cidade de forma clara e organizada.
+1. O usuário insere os dados de **duas cidades**.
+2. O programa calcula atributos derivados.
+3. O usuário escolhe **dois atributos** para comparar entre as cartas.
+4. O programa exibe os valores comparados e determina qual carta possui o maior valor (ou menor, no caso da densidade populacional).
 
-### 📥 Entrada e 📤 Saída de Dados:
-- O usuário insere os dados de cada carta interativamente.
-- Após o cadastro, os dados são exibidos com todas as propriedades da cidade, uma por linha.
+## 🖥️ Exemplo de Uso
 
+Ao executar o programa, será exibido um menu de entrada como este:
+
+```
+==================
+Cadastro da Carta 1
+==================
+Digite os dados abaixo Carta 1:
+Nome do Pais: Brasil
+Letra do Estado: SP
+Codigo da carta: A01
+Nome da cidade: São Paulo
+Quantidade populacional: 12000000
+Numero de pontos turisticos: 20
+Area em Km2: 152145
+O PIB: 230000000000
+```
+
+Após o cadastro das duas cartas, você verá:
+
+```
+Escolha o primeiro atributo para comparar:
+1 - Populacao
+2 - Area
+3 - PIB
+4 - Pontos Turisticos
+5 - Densidade Populacional (MENOR vence!)
+6 - PIB per Capita
+7 - Super Poder
+```
+
+Depois de escolher os atributos, o programa exibirá os valores comparados e determinará o vencedor.
+
+## 🛠️ Arquivos/Códigos Criados
+
+- `CartasSuperTrunfo.c`: código principal do jogo com todas as lógicas de entrada, processamento e saída.
+- Lógica implementada:
+  - Cadastro manual via `scanf`
+  - Cálculo automático de métricas
+  - Menu dinâmico com verificação de escolhas
+  - Sistema de comparação com validação especial para densidade populacional
+
+## 🔧 Melhorias Futuras (Sugestões)
+
+- Adicionar menu interativo com `while` e `switch` para permitir múltiplas rodadas.
+- Incluir um sistema de pontuação.
+- Permitir cadastro de mais de duas cartas.
+- Armazenamento em arquivos `.txt` ou `.csv`.
+- Implementar rankings automáticos dos atributos.
+
+## 📚 Tecnologias Utilizadas
+
+- Linguagem C
+- Terminal/Console
+
+## 📌 Observações
+
+- O programa funciona apenas no terminal.
+- A entrada de dados deve seguir o formato pedido para evitar falhas.
+- Não há sistema de validação de erros para dados inválidos neste estágio inicial, apenas a condição default do switch.
+- Pode ser organizado melhor o código criando metodos e organizando em mais classes.
 ---
-
-## 🛡️ Nível Aventureiro
-
-No nível Aventureiro, você expandirá o sistema para incluir propriedades calculadas, permitindo uma análise mais detalhada das cartas.
-
-### 🆕 Diferença em relação ao Nível Novato:
-- **Novas Propriedades Calculadas:**
-  - **Densidade Populacional:** População dividida pela área da cidade.
-  - **PIB per Capita:** PIB total dividido pela população.
-
-### ⚙️ Funcionalidades do Sistema:
-- O sistema agora calculará automaticamente a Densidade Populacional e o PIB per Capita com base nos dados inseridos.
-- Essas novas propriedades serão adicionadas às informações exibidas para cada cidade.
-
-### 📥 Entrada e 📤 Saída de Dados:
-- O usuário continua inserindo os dados de cada carta interativamente.
-- O sistema exibirá os dados, incluindo as novas propriedades calculadas, de forma clara e organizada.
-
----
-
-## 🏆 Nível Mestre
-
-No nível Mestre, você implementará comparações entre as cartas, utilizando operadores relacionais e manipulando grandes números com precisão.
-
-### 🆕 Diferença em relação ao Nível Aventureiro:
-- **Comparação de Cartas:**
-  - O sistema permitirá ao usuário comparar duas cartas com base nas propriedades inseridas e calculadas.
-  - Cada carta terá um "Super Poder", que é a soma de todas as propriedades.
-  
-### ⚙️ Funcionalidades do Sistema:
-- O sistema utilizará operadores relacionais para determinar a carta vencedora com base nas propriedades comparadas.
-- A comparação considerará:
-  - **Densidade Populacional:** Vence a carta com menor valor.
-  - **Outras Propriedades:** Vence a carta com maior valor.
-- O resultado das comparações será exibido claramente para cada propriedade.
-
-### 📥 Entrada e 📤 Saída de Dados:
-- O usuário insere as cartas a serem comparadas.
-- O sistema exibe os resultados das comparações, indicando a carta vencedora para cada propriedade.
-
----
-
-Ao concluir todos os níveis, você terá criado um sistema incial para o jogo Super Trunfo, com funcionalidades de cadastro, cálculo e comparação de propriedades. 
-
-Boa sorte e divirta-se programando!
-
-Equipe de Ensino - MateCheck
